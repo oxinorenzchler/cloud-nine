@@ -1,4 +1,6 @@
 import React from 'react';
+import {Provider} from 'react-redux';
+import store from './redux/store'
 import {
   BrowserRouter as Router,
   Switch,
@@ -14,18 +16,20 @@ import CreateProject from './components/projects/CreateProject';
 
 function App() {
   return (
-    <Router>
-        <div className="App">
-          <Navbar/>
-          <Switch>
-            <Route exact path='/' component={Dashboard} />
-            <Route path='/signin' component={SignIn} />
-            <Route path='/signup' component={SignUp} />
-            <Route path='/project/:id' component={ProjectDetails} />
-            <Route path='/create' component={CreateProject} />
-          </Switch>
-        </div>
-    </Router>
+    <Provider store={store}>
+        <Router>
+          <div className="App">
+            <Navbar/>
+            <Switch>
+              <Route exact path='/' component={Dashboard} />
+              <Route path='/signin' component={SignIn} />
+              <Route path='/signup' component={SignUp} />
+              <Route path='/project/:id' component={ProjectDetails} />
+              <Route path='/create' component={CreateProject} />
+            </Switch>
+          </div>
+      </Router>
+    </Provider>
   );
 }
 
