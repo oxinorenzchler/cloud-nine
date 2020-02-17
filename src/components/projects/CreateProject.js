@@ -7,14 +7,14 @@ function CreateProject() {
         title: '',
         content: ''
     });
-    const {title, content} = input
     
     const handleSubmit = (e) => {
         e.preventDefault()
         console.log(input)
     }
 
-
+    const {title, content} = input
+    
     return (
         <React.Fragment>
             <div className="container">

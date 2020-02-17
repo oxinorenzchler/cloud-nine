@@ -1,7 +1,6 @@
 import React from 'react'
 
 function ProjectSummary({project}) {
-    console.log(project)
     return (
         <React.Fragment>
                 <div className="card z-depth-1 project-summary">
