@@ -2,7 +2,7 @@ import {
     CREATE_PROJECT_REQUEST
 } from './projectTypes'
 
-export const createProject = () => {
+export const createProjectRequest = () => {
     return {
         type: CREATE_PROJECT_REQUEST,
 
@@ -10,7 +10,8 @@ export const createProject = () => {
 }
 
 export const createProject = project => {
-    return (dispatch) => {
+    //receive props applied in thunk
+    return (dispatch, {getFirebase, getFirestore}) => {
         
     }
 }

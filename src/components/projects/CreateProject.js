@@ -1,5 +1,7 @@
 import React from 'react'
+import {connect} from 'react-redux'
 import { useHandleChange } from '../../globalHooks/globalHooks'
+import {createProject} from '../../redux'
 
 function CreateProject() {
 
@@ -37,4 +39,13 @@ function CreateProject() {
     )
 }
 
-export default CreateProject
+const mapDispatchToProps = dispatch => {
+    return {
+        createProject: () => dispatch(createProject())
+    }
+}
+
+export default connect(
+    null,
+    mapDispatchToProps
+)(CreateProject)
