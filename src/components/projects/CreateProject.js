@@ -3,7 +3,7 @@ import {connect} from 'react-redux'
 import { useHandleChange } from '../../globalHooks/globalHooks'
 import {createProject} from '../../redux'
 
-function CreateProject() {
+function CreateProject({createProject}) {
 
     const [input, handleInputChange] = useHandleChange({
         title: '',
@@ -12,7 +12,7 @@ function CreateProject() {
     
     const handleSubmit = (e) => {
         e.preventDefault()
-        console.log(input)
+        createProject(input)
     }
 
     const {title, content} = input
@@ -39,11 +39,11 @@ function CreateProject() {
     )
 }
 
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = (dispatch) => {
     return {
-        createProject: () => dispatch(createProject())
+        createProject: (input) => dispatch(createProject(input))
     }
-}
+} 
 
 export default connect(
     null,
